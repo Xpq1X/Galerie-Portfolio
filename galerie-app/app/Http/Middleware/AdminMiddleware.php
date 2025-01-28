@@ -16,7 +16,7 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        // Check if the user is authenticated and is an admin
+        // Ensure the user is authenticated
         if (auth()->check() && auth()->user()->isAdmin()) {
             return $next($request);  // If admin, continue the request
         }

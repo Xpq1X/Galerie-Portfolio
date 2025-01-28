@@ -3,7 +3,7 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
-use App\Http\Middleware\AdminMiddleware;  // <-- Import the AdminMiddleware class
+use App\Http\Middleware\AdminMiddleware;  // <-- Ensure AdminMiddleware is imported
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 
@@ -48,6 +48,6 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'admin' => \App\Http\Middleware\AdminMiddleware::class, // <-- Add the admin middleware here
+        'admin' => \App\Http\Middleware\AdminMiddleware::class, // <-- Ensure AdminMiddleware is registered
     ];
 }
